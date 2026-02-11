@@ -1,4 +1,4 @@
-# Very Simple Slideshot Tunkki - Slideshow Kiosk
+# Very Simple Slideshow Tunkki - Slideshow Kiosk
 
 A lightweight, containerized slideshow system for displaying images and web content in fullscreen mode. Perfect for kiosks, displays, and presentations.
 
