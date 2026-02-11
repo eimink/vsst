@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  slideshow:
+    build: .
+    container_name: slideshow
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./content:/content
+    networks:
+      - slideshow-network
+    restart: unless-stopped
+
+networks:
+  slideshow-network:
+    driver: bridge
