@@ -37,6 +37,27 @@
             justify-content: center;
             opacity: 0;
             transition: opacity 0.5s ease-in-out;
+            overflow: hidden;
+        }
+
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: var(--bg-image, none);
+            background-size: cover;
+            background-position: center;
+            filter: blur(20px);
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .slide > * {
+            position: relative;
+            z-index: 1;
         }
 
         .slide.active {
@@ -111,6 +132,8 @@
                     img.src = slide.src;
                     img.alt = slide.name;
                     slideDiv.appendChild(img);
+                    // Set background image for blur effect
+                    slideDiv.style.setProperty('--bg-image', `url('${slide.src}')`);
                 } else if (slide.type === 'iframe') {
                     const iframe = document.createElement('iframe');
                     iframe.src = slide.src;
